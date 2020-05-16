@@ -24,7 +24,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "akhilraj08.ak-components/react-slider@0.0.1": {
+    "akhilraj08.ak-components/react-slider@0.0.2": {
         "files": [
             {
                 "relativePath": "src/components/react-slider/index.js",

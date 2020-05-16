@@ -30,6 +30,10 @@ class ReactSlider extends PureComponent {
                 }
             }, 3000)
         }
+
+        setTimeout(() => {
+            this.resetSlide();
+        }, 1000)
     }
 
     componentWillUnmount() {
@@ -206,7 +210,7 @@ ReactSlider.defaultProps = {
 };
 
 ReactSlider.propTypes = {
-    children: PropTypes.object,
+    children: PropTypes.array,
     showChevron: PropTypes.bool,
     showDisk: PropTypes.bool,
     autoRotate: PropTypes.bool,

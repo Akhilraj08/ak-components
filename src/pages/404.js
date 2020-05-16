@@ -3,6 +3,8 @@ import React from "react"
 import Layout from "../inner-components/layout"
 import SEO from "../inner-components/seo"
 
+//import '../inner-components/layout.css'
+
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />

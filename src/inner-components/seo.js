@@ -11,78 +11,79 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
+    const { site } = useStaticQuery(
+        graphql`
+            query {
+                site {
+                    siteMetadata {
+                        title
+                        description
+                        author
+                    }
+                }
+            }
+        `
+    )
 
-  const metaDescription = description || site.siteMetadata.description
+    const metaDescription = description || site.siteMetadata.description
 
-  return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | AK Components`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
-  )
+    return (
+        <Helmet
+            htmlAttributes={{ lang, }}
+            title={title}
+            titleTemplate={`%s | AK Components`}
+            meta={[
+                {
+                    name: `description`,
+                    content: metaDescription,
+                },
+                {
+                    property: `og:title`,
+                    content: title,
+                },
+                {
+                    property: `og:description`,
+                    content: metaDescription,
+                },
+                {
+                    property: `og:type`,
+                    content: `website`,
+                },
+                {
+                    name: `twitter:card`,
+                    content: `summary`,
+                },
+                {
+                    name: `twitter:creator`,
+                    content: site.siteMetadata.author,
+                },
+                {
+                    name: `twitter:title`,
+                    content: title,
+                },
+                {
+                    name: `twitter:description`,
+                    content: metaDescription,
+                },
+            ].concat(meta)}
+        >
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+            <link rel="icon" href={"https://tap-assets.dexecure.net/favicon.ico?v=2"} />
+        </Helmet>
+    )
 }
 
 SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
+    lang: `en`,
+    meta: [],
+    description: ``,
 }
 
 SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    lang: PropTypes.string,
+    meta: PropTypes.arrayOf(PropTypes.object),
+    title: PropTypes.string.isRequired,
 }
 
 export default SEO

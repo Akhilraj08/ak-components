@@ -5,6 +5,8 @@ import Layout from "../inner-components/layout"
 import Image from "../inner-components/image"
 import SEO from "../inner-components/seo"
 
+//import '../inner-components/layout.css'
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />

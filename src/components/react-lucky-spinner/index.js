@@ -95,30 +95,32 @@ class ReactLuckySpinner extends PureComponent {
         var t = now - this.begin || 0;
         
         let position = (speeds / maxTime / 2 * (maxTime - t) * (maxTime - t) + reelArray) % width | 0;
-        this.reactLuckySpinnerSlots.current.scrollLeft = position;
+        if(this.reactLuckySpinnerSlots.current) {
+            this.reactLuckySpinnerSlots.current.scrollLeft = position;
 
-        if (t < maxTime && typeof window !== "undefined") {
-            window.requestAnimationFrame(this.animate); // animate callback
-        } else {
-            this.begin = undefined;
-            
-            this.setState({
-                speeds: this.props.spinSpeed,
-                reelArray: this.setReel(this.state.itemIndex),
-                isSpinStarted: false
-            }, () => {
-                if(this.props.onSpinComplete) {
-                    let tempIndex = '';
-                    for(let i in this.state.itemIndex) {
-                        if(this.state.itemIndex[i] === position) {
-                            tempIndex = i;
-                            break;
+            if (t < maxTime && typeof window !== "undefined") {
+                window.requestAnimationFrame(this.animate); // animate callback
+            } else {
+                this.begin = undefined;
+                
+                this.setState({
+                    speeds: this.props.spinSpeed,
+                    reelArray: this.setReel(this.state.itemIndex),
+                    isSpinStarted: false
+                }, () => {
+                    if(this.props.onSpinComplete) {
+                        let tempIndex = '';
+                        for(let i in this.state.itemIndex) {
+                            if(this.state.itemIndex[i] === position) {
+                                tempIndex = i;
+                                break;
+                            }
                         }
-                    }
 
-                    this.props.onSpinComplete(tempIndex);
-                }
-            })
+                        this.props.onSpinComplete(tempIndex);
+                    }
+                })
+            }
         }
     }
 

@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@bit/akhilraj08.ak-components.react-lucky-spinner": "^0.1.2",
+    "@bit/akhilraj08.ak-components.react-slider": "^0.0.2",
+    "foundation-sites": "^6.6.3",
     "gatsby": "^2.21.0",
     "gatsby-image": "^2.4.0",
     "gatsby-plugin-manifest": "^2.4.0",
@@ -12,6 +15,7 @@
     "gatsby-plugin-sharp": "^2.6.0",
     "gatsby-source-filesystem": "^2.3.0",
     "gatsby-transformer-sharp": "^2.5.0",
+    "materialize-css": "^1.0.0-rc.2",
     "node-sass": "^4.14.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
