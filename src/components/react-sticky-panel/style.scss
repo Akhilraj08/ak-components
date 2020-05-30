@@ -1,0 +1,26 @@
+.react-sticky-panel-parent {
+	display: flex !important;
+    flex-flow: column;
+}
+
+.ak-react-sticky-panel {
+	content: '';
+	flex-grow: 1;
+	position: relative;
+
+	.arsp-top {
+		position: absolute;
+		top: 0;
+	}
+	.arsp-body {
+		padding: 1px 0;
+	}
+	.arsp-bottom {
+		position: absolute;
+		bottom: 0;
+	}
+	
+	// > *{
+	// 	transition: all 0.5s linear 0s;
+	// }
+}

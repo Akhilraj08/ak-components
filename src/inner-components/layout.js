@@ -59,6 +59,9 @@ const Layout = ({ children }) => {
                         <li className="bold">
                             <Link to="/react-lucky-spinner-page" className="waves-effect waves-teal">React Lucky Spinner</Link>
                         </li>
+                        <li className="bold">
+                            <Link to="/react-sticky-panel-page" className="waves-effect waves-teal">React Sticky Panel</Link>
+                        </li>
                     </ul>
                 </aside>
 
