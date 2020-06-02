@@ -30,10 +30,6 @@ class ReactSlider extends PureComponent {
                 }
             }, 3000)
         }
-
-        setTimeout(() => {
-            this.resetSlide();
-        }, 1000)
     }
 
     componentWillUnmount() {

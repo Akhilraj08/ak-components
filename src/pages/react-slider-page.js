@@ -13,7 +13,7 @@ const ReactSliderPage = () => (
     
 	    <div className={`component-section react-slider-page`}>
     		<ReactSlider autoRotate={false}>
-    			<div>
+    			<div style={{'minHeight': '300px'}}>
                     <img src={"https://marketplace.canva.com/EAD2-sy3snI/2/0/1600w/canva-tropical-happiness-zoom-virtual-background-JtPR2q13C4g.jpg"}
                         alt="Google image" />         
                 </div>

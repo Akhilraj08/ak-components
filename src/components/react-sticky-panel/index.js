@@ -25,7 +25,7 @@ const ReactStickyPanel = (props) => {
     const spanBottom = useRef(null);
     const divBody = useRef(null);
 
-    let { positionTop = '15', positionBottom = '15' } = props;
+    let { isAnimate = true, positionTop = '15', positionBottom = '15' } = props;
     
     useEffect(() => {
         divEL.current.parentNode.classList.add("react-sticky-panel-parent");
@@ -137,10 +137,12 @@ const ReactStickyPanel = (props) => {
             previousScrollY = window.scrollY;
         };
 
-        window.addEventListener("scroll", onScroll);
+        if(isAnimate) {
+            window.addEventListener("scroll", onScroll);
+        }
         
         return () => window.removeEventListener("scroll", onScroll);
-    }, []);
+    }, [isAnimate, positionTop, positionBottom]);
 
 	return(
         <div className={"ak-react-sticky-panel"} ref={divEL}> 
@@ -156,7 +158,8 @@ const ReactStickyPanel = (props) => {
 ReactStickyPanel.propTypes = {
     children: PropTypes.object,
     positionTop: PropTypes.number,
-    positionBottom: PropTypes.number
+    positionBottom: PropTypes.number,
+    isAnimate: PropTypes.bool,
 }
 
 export default ReactStickyPanel;
